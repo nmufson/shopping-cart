@@ -1,0 +1,15 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.homeContainer p {
+  max-width: 300px;
+  text-align: center;
+}
+
+.shopLink {
+  color: red;
+}
