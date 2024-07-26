@@ -4,7 +4,12 @@ import styles from './ShopPage.module.css';
 import { Item } from '../Item/Item';
 
 export const ShopPage = () => {
-  const [data, loading, error] = useOutletContext();
+  const [data, loading, error, currentItem, setCurrentItem] =
+    useOutletContext();
+
+  const selectItem = (item) => {
+    setCurrentItem(item);
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -16,11 +21,17 @@ export const ShopPage = () => {
 
   return (
     <>
-      <main className={styles.shopContainer}>
+      <div className={styles.shopContainer}>
         {data.map((item) => (
-          <Item key={item.id} item={item} />
+          <Item
+            key={item.slug}
+            item={item}
+            onClick={() => selectItem(item)}
+            data={data}
+            currentItem={currentItem}
+          />
         ))}
-      </main>
+      </div>
     </>
   );
 };

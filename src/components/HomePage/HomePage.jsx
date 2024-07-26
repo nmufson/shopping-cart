@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const HomePage = () => {
   return (
-    <main className={styles.homeContainer}>
+    <div className={styles.homeContainer}>
       <h1>Welcome to MyStore</h1>
       <p>
         TrendyHaven is your one-stop destination for fashion-forward clothing
@@ -14,6 +14,6 @@ export const HomePage = () => {
       <Link to="../shop/" className={styles.shopLink}>
         click this for Shop
       </Link>
-    </main>
+    </div>
   );
 };

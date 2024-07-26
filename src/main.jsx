@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
 import { HomePage } from './components/HomePage/HomePage.jsx';
 import { ShopPage } from './components/ShopPage/ShopPage.jsx';
+import { ItemPage } from './components/ItemPage/ItemPage.jsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -11,6 +12,11 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     children: [
+      // makes it so that HomePage will be the default
+      {
+        index: true,
+        element: <HomePage />,
+      },
       {
         path: 'home/',
         element: <HomePage />,
@@ -18,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: 'shop/',
         element: <ShopPage />,
+      },
+      {
+        path: ':slug',
+        element: <ItemPage />,
       },
     ],
   },
