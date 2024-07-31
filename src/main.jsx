@@ -5,6 +5,7 @@ import App from './App.jsx';
 import { HomePage } from './components/HomePage/HomePage.jsx';
 import { ShopPage } from './components/ShopPage/ShopPage.jsx';
 import { ItemPage } from './components/ItemPage/ItemPage.jsx';
+import { CheckOutPage } from './components/CheckOutPage/CheckOutPage.jsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: ':slug',
         element: <ItemPage />,
+      },
+      {
+        path: 'checkout/',
+        element: <CheckOutPage />,
       },
     ],
   },

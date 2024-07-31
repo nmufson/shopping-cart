@@ -1,11 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import styles from './ShopPage.module.css';
-import { Item } from '../Item/Item';
+import { ItemCard } from '../Item/Item';
 
 export const ShopPage = () => {
-  const [data, loading, error, currentItem, setCurrentItem] =
-    useOutletContext();
+  const [
+    data,
+    loading,
+    error,
+    currentItem,
+    setCurrentItem,
+    cartItems,
+    setCartItems,
+  ] = useOutletContext();
 
   const selectItem = (item) => {
     setCurrentItem(item);
@@ -23,12 +30,14 @@ export const ShopPage = () => {
     <>
       <div className={styles.shopContainer}>
         {data.map((item) => (
-          <Item
+          <ItemCard
             key={item.slug}
             item={item}
             onClick={() => selectItem(item)}
             data={data}
             currentItem={currentItem}
+            cartItems={cartItems}
+            setCartItems={setCartItems}
           />
         ))}
       </div>

@@ -11,6 +11,10 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [currentItem, setCurrentItem] = useState(null);
 
+  const totalCartQuantity = (cartItems) => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,9 +37,19 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <NavBar totalCartQuantity={totalCartQuantity(cartItems)} />
       <main>
-        <Outlet context={[data, loading, error, currentItem, setCurrentItem]} />
+        <Outlet
+          context={[
+            data,
+            loading,
+            error,
+            currentItem,
+            setCurrentItem,
+            cartItems,
+            setCartItems,
+          ]}
+        />
       </main>
     </>
   );
@@ -49,6 +63,8 @@ const createSlug = (title) => {
     .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric characters with dashes
     .replace(/^-+|-+$/g, ''); // Remove leading or trailing dashes
 };
+
+// dont need this, can use toFixed
 
 const updatePrice = (price) => {
   const priceString = String(price);

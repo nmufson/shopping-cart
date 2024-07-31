@@ -1,3 +1,10 @@
 .itemImageContainer img {
   max-width: 200px;
 }
+
+/* removes the auto generated spin button for incr/decrementing */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
