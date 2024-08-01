@@ -1,6 +1,7 @@
 import styles from './CheckOutPage.module.css';
 import PropTypes from 'prop-types';
 import { useOutletContext } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 export const CheckOutPage = () => {
   const [
@@ -90,13 +91,34 @@ CheckOutCartItem.propTypes = {
 };
 
 const CartQuantityDiv = ({ cartItems, setCartItems, item }) => {
-  const handleInput = (e) => {
-    const value = e.target.value;
-    const newValue = Math.max(1, Math.floor(value));
+  // use state to control the input value so user can type whatever they want
+  // handleBlur sees when we tab or click away from input, and then
+  // runs updateCartItem which uses setCartItems
+  // the value of our input element is now our inputValue state
+  const [inputValue, setInputValue] = useState(item.quantity.toString());
+
+  // useEffect(() => {
+  //   setInputValue(item.quantity.toString());
+  // }, [item.quantity]);
+
+  const updateCartItem = (newValue) => {
     const updatedCartItems = cartItems.map((cartItem) =>
       cartItem.id === item.id ? { ...cartItem, quantity: newValue } : cartItem
     );
     setCartItems(updatedCartItems);
+  };
+
+  const handleInput = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleBlur = () => {
+    let newValue = parseInt(inputValue, 10);
+    if (isNaN(newValue) || newValue < 1) {
+      newValue = 1;
+    }
+    setInputValue(newValue.toString());
+    updateCartItem(newValue);
   };
 
   const increment = () => {
@@ -125,11 +147,12 @@ const CartQuantityDiv = ({ cartItems, setCartItems, item }) => {
       <input
         type="number"
         className={styles.input}
-        value={item.quantity}
+        value={inputValue}
         // {} insetad of "" so that JSX interprets them as numbers instead of strings
         min={1}
         step={1}
         onInput={handleInput}
+        onBlur={handleBlur}
       />
       <button onClick={increment}>+</button>
     </div>
