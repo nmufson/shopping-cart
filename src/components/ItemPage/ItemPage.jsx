@@ -68,7 +68,7 @@ export const ItemPage = () => {
         </div>
         <div>
           <p>Quantity:</p>
-          <InputDiv quantity={quantity} setQuantity={setQuantity} />
+          <QuantityInputDiv quantity={quantity} setQuantity={setQuantity} />
         </div>
         <div>
           <button onClick={handleAddToCart}>Add to Cart</button>
@@ -79,7 +79,7 @@ export const ItemPage = () => {
   );
 };
 
-const InputDiv = ({ quantity, setQuantity }) => {
+export const QuantityInputDiv = ({ quantity, setQuantity }) => {
   const handleInput = (e) => {
     const value = e.target.value;
     if (value === '') {
@@ -114,7 +114,7 @@ const InputDiv = ({ quantity, setQuantity }) => {
   );
 };
 
-InputDiv.propTypes = {
+QuantityInputDiv.propTypes = {
   quantity: PropTypes.number.isRequired,
   setQuantity: PropTypes.func.isRequired,
 };
