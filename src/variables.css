@@ -1,0 +1,19 @@
+:root {
+  /* Main Colors */
+  --color-dark-blue: #021526; /* Very dark blue - great for headers, main text */
+  --color-navy: #03346e; /* Rich navy - perfect for buttons, important elements */
+  --color-blue: #6eacda; /* Light blue - great for accents, hover states */
+  --color-cream: #e2e2b6; /* Light cream - nice for highlights, backgrounds */
+
+  /* Semantic Variables */
+  --text-primary: var(--color-dark-blue);
+  --text-light: #ffffff;
+  --bg-primary: #ffffff;
+  --bg-secondary: var(--color-cream);
+  --accent: var(--color-blue);
+  --button-bg: var(--color-navy);
+
+  /* States */
+  --hover-overlay: rgba(2, 21, 38, 0.1);
+  --active-overlay: rgba(2, 21, 38, 0.2);
+}
