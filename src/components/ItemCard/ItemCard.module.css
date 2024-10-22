@@ -41,3 +41,29 @@
   font-size: 1.3rem;
   font-weight: bold;
 }
+
+.starRating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.starFull {
+  color: gold;
+}
+
+.starHalf {
+  background: linear-gradient(90deg, gold 50%, #ccc 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.starEmpty {
+  color: #ccc;
+}
+
+.ratingText {
+  margin-left: 4px;
+  font-size: 0.9em;
+  color: #666;
+}

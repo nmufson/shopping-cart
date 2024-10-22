@@ -110,6 +110,8 @@ header {
 main {
   min-height: 500px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 footer {
@@ -119,7 +121,7 @@ footer {
 
 /* 
 dark mode?? */
-
+/* 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -131,4 +133,4 @@ dark mode?? */
   button {
     background-color: #f9f9f9;
   }
-}
+} */

@@ -13,4 +13,16 @@ type LayoutContext = [
 
 // useLayoutContext basically calls useOutletContext with our defined types
 
-export const useLayoutContext = () => useOutletContext<LayoutContext>();
+export const useLayoutContext = () => {
+  const context = useOutletContext<LayoutContext>();
+
+  return {
+    data: context[0],
+    loading: context[1],
+    error: context[2],
+    currentItem: context[3],
+    setCurrentItem: context[4],
+    cartItems: context[5],
+    setCartItems: context[6],
+  };
+};

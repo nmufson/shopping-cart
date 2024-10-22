@@ -1,18 +1,20 @@
 import styles from './Shop.module.css';
 import ItemCard from '../../components/ItemCard/ItemCard';
-import { Product } from '../../types';
 import { useLayoutContext } from '../../hooks/useLayoutContext';
+import { useLocation, useNavigate } from 'react-router-dom';
+import AddToCartConfirmationModal from '../../components/Modal/Modal';
 
 const Shop = () => {
-  const [
-    data,
-    loading,
-    error,
-    currentItem,
-    setCurrentItem,
-    cartItems,
-    setCartItems,
-  ] = useLayoutContext();
+  const { data, loading, error, cartItems } = useLayoutContext();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { showModal, addedItem } = location.state || {};
+
+  const handleCloseModal = () => {
+    // Replace current location state with no modal
+    navigate('/shop', { replace: true });
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -26,17 +28,17 @@ const Shop = () => {
     <>
       <div className={styles.shopContainer}>
         {data.map((item) => (
-          <ItemCard
-            key={item.slug}
-            item={item}
-            onClick={() => setCurrentItem(item)}
-            data={data}
-            currentItem={currentItem}
-            cartItems={cartItems}
-            setCartItems={setCartItems}
-          />
+          <ItemCard key={item.slug} item={item} />
         ))}
       </div>
+
+      {showModal && addedItem && (
+        <AddToCartConfirmationModal
+          addedItem={addedItem}
+          cartItems={cartItems}
+          onClose={handleCloseModal}
+        />
+      )}
     </>
   );
 };

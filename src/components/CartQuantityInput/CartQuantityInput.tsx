@@ -1,34 +1,41 @@
-const CartQuantityInput = ({ quantity, setQuantity }) => {
-  const handleInput = (e) => {
-    const value = e.target.value;
-    if (value === '') {
-      setQuantity(0);
-    } else {
-      const newValue = Math.max(1, Math.floor(value));
-      setQuantity(newValue);
-    }
-  };
+import styles from './CartQuantiyInput.module.css';
+
+interface CartQuantityInputProps {
+  quantity: number;
+  setQuantity: (value: number) => void;
+}
+
+const CartQuantityInput = ({
+  quantity,
+  setQuantity,
+}: CartQuantityInputProps) => {
   const increment = () => {
-    setQuantity((prevValue) => prevValue + 1);
+    setQuantity(Math.min(5, quantity + 1));
   };
 
   const decrement = () => {
-    setQuantity((prevValue) => Math.max(1, prevValue - 1));
+    setQuantity(Math.max(1, quantity - 1));
   };
 
   return (
-    <div>
-      <button onClick={decrement}>-</button>
-      <input
+    <div className={styles.quantityInput}>
+      <button onClick={decrement} disabled={quantity <= 1}>
+        -
+      </button>
+      {/* <input
         type="number"
-        className={styles.input}
-        value={quantity}
-        // {} insetad of "" so that JSX interprets them as numbers instead of strings
+        value={quantity} // Don't include "Quantity:" in the value
         min={1}
-        step={1}
-        onInput={handleInput}
-      />
-      <button onClick={increment}>+</button>
+        max={5}
+        readOnly
+      /> */}
+      <div className={styles.inputWrapper}>
+        <span>Quantity: </span>
+        <span>{quantity}</span>
+      </div>
+      <button onClick={increment} disabled={quantity >= 5}>
+        +
+      </button>
     </div>
   );
 };

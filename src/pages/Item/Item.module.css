@@ -1,5 +1,31 @@
-.itemImageContainer img {
-  max-width: 200px;
+.itemPageContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.itemImage {
+  max-width: 400px;
+  margin: 0 0 0 20px;
+}
+
+.itemInfoContainer {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemInfoContainer h3 {
+  font-size: 2.3rem;
+}
+
+.itemInfoContainer p,
+.itemInfoContainer input {
+  font-size: 1.5rem;
+}
+
+.buttonDiv {
+  align-self: center;
 }
 
 /* removes the auto generated spin button for incr/decrementing */
