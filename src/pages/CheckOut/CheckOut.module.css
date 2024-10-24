@@ -1,79 +1,41 @@
 .checkOutPageContainer {
   display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
 .shoppingCartContainer {
-  margin: 0 0 0 10px;
-  width: 60%;
+}
+
+.shoppingCartContainer h1 {
+  font-size: 2.3rem;
+  margin: 0 0 20px 0;
 }
 
 .checkOutTable {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0 10px;
-}
-.row {
-  border-bottom: 1px black solid;
 }
 
-.productCell,
-.priceCell,
-.quantityCell,
-.totalCell {
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px black solid;
+.checkOutTable thead,
+.checkOutTable th {
+  background-color: aqua;
 }
 
-.productCell {
-  width: 35%;
+.checkOutTable thead * {
+  font-size: 1.5rem;
 }
 
-.priceCell,
-.quantityCell,
-.totalCell {
-  width: 15%;
-}
-
-.quantityCell input {
-  width: 30px;
-}
-
-.productInfo {
-  display: flex;
-  align-items: center;
-}
-
-.productImage {
-  max-width: 100px;
-  max-height: 100px;
-  object-fit: cover;
-  margin-right: 16px;
-}
-
-.productTitle {
-  text-align: left;
-  margin: 0;
-}
-
-.removeCell {
-  width: 5%;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.removeCell button {
-  width: 50px;
-  height: 40px;
-}
-
-.row:hover .removeCell {
-  opacity: 1; /* Fully visible when the row is hovered */
+.checkOutTable tbody * {
+  font-size: 1.3rem;
 }
 
 .input::-webkit-outer-spin-button,
 .input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.orderSummary {
+  min-width: 350px;
 }

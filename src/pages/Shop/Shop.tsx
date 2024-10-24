@@ -2,19 +2,12 @@ import styles from './Shop.module.css';
 import ItemCard from '../../components/ItemCard/ItemCard';
 import { useLayoutContext } from '../../hooks/useLayoutContext';
 import { useLocation, useNavigate } from 'react-router-dom';
-import AddToCartConfirmationModal from '../../components/Modal/Modal';
+import AddToCartConfirmationModal from '../../components/Modals/AddedToCartModal/AddedToCartModal';
 
 const Shop = () => {
   const { data, loading, error, cartItems } = useLayoutContext();
   const location = useLocation();
   const navigate = useNavigate();
-
-  const { showModal, addedItem } = location.state || {};
-
-  const handleCloseModal = () => {
-    // Replace current location state with no modal
-    navigate('/shop', { replace: true });
-  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -31,14 +24,6 @@ const Shop = () => {
           <ItemCard key={item.slug} item={item} />
         ))}
       </div>
-
-      {showModal && addedItem && (
-        <AddToCartConfirmationModal
-          addedItem={addedItem}
-          cartItems={cartItems}
-          onClose={handleCloseModal}
-        />
-      )}
     </>
   );
 };

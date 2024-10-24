@@ -5,65 +5,45 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 400px;
-  justify-content: space-between;
+  height: 450px;
+  width: 100%;
+  justify-content: center;
+}
+
+.imageDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 300px;
 }
 
 .itemContainer img {
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  object-fit: cover;
   width: 150px;
-  height: 200px;
+  height: auto;
 }
 
-.itemContainer > div:first-child {
-  margin: 0;
-}
-
-.itemContainer > div:nth-child(2) {
+.itemInfo {
   text-align: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  max-width: 200px;
-  margin: 0 0 0 0;
+  width: 100%;
+  margin: 10px 0 0 0;
 }
 
-.itemContainer > div:nth-child(3) {
-  margin: 0;
-}
-.itemContainer > div > p {
-  margin: 0 20px 10px 20px;
-}
-
-.itemContainer p:first-child {
-  font-size: 1rem;
-}
-
-.itemContainer p:nth-child(2) {
+.itemContainer p {
   font-size: 1.3rem;
-  font-weight: bold;
+  margin: 0 20px 10px 20px;
 }
 
 .starRating {
   display: flex;
   align-items: center;
   gap: 2px;
-}
-
-.starFull {
-  color: gold;
-}
-
-.starHalf {
-  background: linear-gradient(90deg, gold 50%, #ccc 50%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.starEmpty {
-  color: #ccc;
-}
-
-.ratingText {
-  margin-left: 4px;
-  font-size: 0.9em;
-  color: #666;
 }

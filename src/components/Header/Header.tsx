@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ cartItems }) => {
   return (
     <header className={styles.header}>
       <Link to="shop/">
-        <h1>MyStore</h1>
+        <p className={styles.myStoreP}>MyStore</p>
       </Link>
       <div className={styles.navContainer}>
         <Link to="home/">

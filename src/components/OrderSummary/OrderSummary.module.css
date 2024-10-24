@@ -1,0 +1,43 @@
+.orderSummary {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  border: 1px solid black;
+  gap: 15px;
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.titleDiv {
+  background-color: beige;
+}
+.title {
+  font-size: 2rem;
+  padding: 15px;
+}
+
+.infoDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+}
+
+.subtotalDiv,
+.shippingDiv,
+.taxesDiv,
+.orderTotalDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderSummary p,
+.orderSummary strong,
+.checkoutButton {
+  font-size: 1.4rem;
+}
+
+.checkoutButton {
+  min-width: 90%;
+  align-self: center;
+}

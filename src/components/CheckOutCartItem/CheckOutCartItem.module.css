@@ -1,0 +1,67 @@
+.row {
+  border: 1px black solid;
+}
+
+.productCell,
+.priceCell,
+.quantityCell,
+.totalCell {
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.productImage {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.productInfo {
+  display: flex;
+  align-items: center;
+}
+
+.productInfo p {
+  margin: 0 0 0 10px;
+}
+
+.productTitle {
+  text-align: left;
+  margin: 0;
+}
+
+.productCell {
+  width: 35%;
+}
+
+.priceCell,
+.quantityCell,
+.totalCell {
+  width: 15%;
+}
+
+.quantityCell input {
+  width: 30px;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #0066cc; /* swap these for variables?*/
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+}
+
+.removeButton:hover {
+  color: #003d7a; /* swap these for variables?*/
+  background: none;
+}
+
+.removeButton:focus {
+  outline: none;
+  text-decoration: none;
+}

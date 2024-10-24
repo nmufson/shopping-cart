@@ -1,27 +1,50 @@
 .itemPageContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
+  gap: 100px;
+  align-items: center;
 }
 
 .itemImage {
-  max-width: 400px;
-  margin: 0 0 0 20px;
+  max-height: 40vh;
+  width: auto;
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .itemInfoContainer {
   max-width: 400px;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 .itemInfoContainer h3 {
   font-size: 2.3rem;
 }
 
+.starRating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.starRating span {
+  font-size: 35px;
+}
+
 .itemInfoContainer p,
 .itemInfoContainer input {
   font-size: 1.5rem;
+}
+
+.cartQuantityDiv {
 }
 
 .buttonDiv {

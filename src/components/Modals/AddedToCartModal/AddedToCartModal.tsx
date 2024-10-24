@@ -1,19 +1,24 @@
 import { useNavigate } from 'react-router-dom';
-import { CartItem } from '../../types';
+import { CartItem, Product } from '../../../types';
 import styles from './Modal.module.css';
+import CheckMarkIcon from '../../icons/CheckMarkIcon';
 
 interface ModalProps {
-  addedItem: CartItem;
+  item: Product;
+  addedQuantity: number;
   cartItems: CartItem[];
   onClose: () => void;
 }
 
 const AddToCartConfirmationModal = ({
-  addedItem,
+  item,
+  addedQuantity,
   cartItems,
   onClose,
 }: ModalProps) => {
   const navigate = useNavigate();
+
+  // make this an added subtotal of what the user just added
 
   const cartSubtotal = cartItems
     .reduce((subtotal, item) => subtotal + item.price * item.quantity, 0)
@@ -24,14 +29,27 @@ const AddToCartConfirmationModal = ({
     navigate('/checkout');
   };
 
+  // show the added quantity and added subtotal
+  // at bottom show Cart subtotal with number of total items
+
   return (
     <>
-      <div className={styles.backdrop} onClick={onClose} />
-      <div className={styles.modal}>
-        <h2>Item Added to Cart!</h2>
-        <p>
-          {addedItem.title} - Quantity: {addedItem.quantity}
-        </p>
+      <div className="backdrop" onClick={onClose} />
+      <div className="modal">
+        {/* perhaps add a checkmark here or something  */}
+        <div className={styles.confirmationDiv}>
+          <h2 className={styles.addedToCartAlert}>Item Added to Cart!</h2>
+          <CheckMarkIcon
+            size={40}
+            color="currentColor"
+            className={styles.cartIcon}
+            aria-label="Shopping Cart"
+          />
+        </div>
+
+        <h2>{item.title}</h2>
+        <p>${(addedQuantity * item.price).toFixed(2)}</p>
+        <p>Quantity: {addedQuantity}</p>
         <p>Cart Subtotal: ${cartSubtotal}</p>
         <div className={styles.buttonGroup}>
           <button onClick={onClose} className={styles.closeButton}>

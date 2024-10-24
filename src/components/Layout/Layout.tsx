@@ -10,10 +10,18 @@ const Layout: React.FC = () => {
   const [data, setData] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [currentItem, setCurrentItem] = useState<Product | null>(null);
-
   const location = useLocation();
+
+  // can refactor local storage logic into a custom hook
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    const savedCartItems = localStorage.getItem('cartItems');
+    return savedCartItems ? JSON.parse(savedCartItems) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   useEffect(() => {
     const loadProducts = async () => {
