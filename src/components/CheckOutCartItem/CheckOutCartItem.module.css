@@ -1,29 +1,51 @@
+.row:not(:first-child) {
+  border-top: 1px black solid;
+}
+
 .row {
-  border: 1px black solid;
+  animation: fadeIn 0.3s ease-in-out;
+  transform-origin: center; /* Make sure the expansion starts from the top */
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scaleY(0); /* Collapses the row vertically */
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1); /* Expands it vertically */
+    opacity: 1;
+  }
+}
+
+.removed {
+  background-color: black;
+  animation: minimize 0.3s forwards; /* Match this duration with setTimeout */
 }
 
 .productCell,
 .priceCell,
 .quantityCell,
 .totalCell {
-  padding: 5px;
+  padding: 20px;
   text-align: center;
   vertical-align: middle;
 }
 
+.priceCell,
+.totalCell {
+  min-width: 20%;
+}
+
 .productImage {
-  max-width: 100px;
-  max-height: 100px;
+  height: 20vh;
+  width: auto;
   object-fit: cover;
   margin-right: 16px;
 }
 
-.productInfo {
-  display: flex;
-  align-items: center;
-}
-
-.productInfo p {
+.productCell p {
   margin: 0 0 0 10px;
 }
 
@@ -33,31 +55,31 @@
 }
 
 .productCell {
-  width: 35%;
-}
-
-.priceCell,
-.quantityCell,
-.totalCell {
-  width: 15%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 450px;
 }
 
 .quantityCell input {
-  width: 30px;
+  width: 20px;
 }
 
 .removeButton {
   background: none;
   border: none;
   padding: 0;
-  color: #0066cc; /* swap these for variables?*/
+  color: var(--color-blue);
   text-decoration: underline;
   cursor: pointer;
   font: inherit;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
 }
 
 .removeButton:hover {
-  color: #003d7a; /* swap these for variables?*/
+  color: var(--text-primary); /* swap these for variables?*/
   background: none;
 }
 

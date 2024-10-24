@@ -1,0 +1,7 @@
+.removedItem {
+  padding: 12px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  margin: 8px 0;
+  animation: fadeIn 0.3s ease-in-out;
+}

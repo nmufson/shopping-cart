@@ -1,13 +1,9 @@
 import styles from './Shop.module.css';
 import ItemCard from '../../components/ItemCard/ItemCard';
 import { useLayoutContext } from '../../hooks/useLayoutContext';
-import { useLocation, useNavigate } from 'react-router-dom';
-import AddToCartConfirmationModal from '../../components/Modals/AddedToCartModal/AddedToCartModal';
 
 const Shop = () => {
-  const { data, loading, error, cartItems } = useLayoutContext();
-  const location = useLocation();
-  const navigate = useNavigate();
+  const { data, loading, error } = useLayoutContext();
 
   if (loading) {
     return <div>Loading...</div>;

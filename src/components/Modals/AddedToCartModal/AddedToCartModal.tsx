@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { CartItem, Product } from '../../../types';
-import styles from './Modal.module.css';
+import styles from './AddedToCartModal.module.css';
 import CheckMarkIcon from '../../icons/CheckMarkIcon';
 
 interface ModalProps {
@@ -10,7 +10,7 @@ interface ModalProps {
   onClose: () => void;
 }
 
-const AddToCartConfirmationModal = ({
+const AddedToCartModal = ({
   item,
   addedQuantity,
   cartItems,
@@ -29,13 +29,18 @@ const AddToCartConfirmationModal = ({
     navigate('/checkout');
   };
 
+  const handleContinueShopping = () => {
+    onClose();
+    navigate('/shop');
+  };
+
   // show the added quantity and added subtotal
   // at bottom show Cart subtotal with number of total items
 
   return (
     <>
       <div className="backdrop" onClick={onClose} />
-      <div className="modal">
+      <div className={`${styles.modal} modal`}>
         {/* perhaps add a checkmark here or something  */}
         <div className={styles.confirmationDiv}>
           <h2 className={styles.addedToCartAlert}>Item Added to Cart!</h2>
@@ -52,7 +57,10 @@ const AddToCartConfirmationModal = ({
         <p>Quantity: {addedQuantity}</p>
         <p>Cart Subtotal: ${cartSubtotal}</p>
         <div className={styles.buttonGroup}>
-          <button onClick={onClose} className={styles.closeButton}>
+          <button
+            onClick={handleContinueShopping}
+            className={styles.closeButton}
+          >
             Continue Shopping
           </button>
           <button onClick={handleCheckout} className={styles.checkoutButton}>
@@ -64,4 +72,4 @@ const AddToCartConfirmationModal = ({
   );
 };
 
-export default AddToCartConfirmationModal;
+export default AddedToCartModal;

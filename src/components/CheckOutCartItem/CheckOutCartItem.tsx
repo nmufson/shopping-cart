@@ -4,42 +4,35 @@ import CartQuantityInput from '../CartQuantityInput/CartQuantityInput';
 import { CartItem } from '../../types';
 
 interface CheckOutCartItemProps {
-  cartItems: CartItem[];
   setCartItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
   item: CartItem;
+  onRemove: () => void;
 }
 
 const CheckOutCartItem = ({
-  cartItems,
   setCartItems,
   item,
+  onRemove,
+  className,
 }: CheckOutCartItemProps) => {
   const [quantity, setQuantity] = useState<number>(item.quantity);
 
-  const removeItem = () => {
-    const updatedCartItems = cartItems.filter(
-      (cartItem) => cartItem.id !== item.id
-    );
-    setCartItems(updatedCartItems);
-  };
-
   // add ability to navigate to item page
+  console.log(className);
   return (
-    <tr className={styles.row}>
+    <tr className={`${styles.row} ${className}`}>
       <td className={styles.productCell}>
-        <div className={styles.productInfo}>
-          <img
-            src={item.image}
-            alt={item.title}
-            className={styles.productImage}
-          />
-          <div>
-            <p className={styles.productTitle}>{item.title}</p>
-            <button onClick={removeItem} className={styles.removeButton}>
-              Remove
-            </button>
-          </div>
-        </div>
+        <img
+          src={item.image}
+          alt={item.title}
+          className={styles.productImage}
+        />
+        {/* <div> */}
+        <p className={styles.productTitle}>{item.title}</p>
+        <button onClick={onRemove} className={styles.removeButton}>
+          Remove
+        </button>
+        {/* </div> */}
       </td>
       <td className={styles.quantityCell}>
         <CartQuantityInput
@@ -50,9 +43,11 @@ const CheckOutCartItem = ({
           item={item}
         />
       </td>
-      <td className={styles.priceCell}>${item.displayPrice}</td>
+      <td className={styles.priceCell}>
+        <p>${item.displayPrice}</p>
+      </td>
       <td className={styles.totalCell}>
-        ${(item.price * item.quantity).toFixed(2)}
+        <strong>${(item.price * item.quantity).toFixed(2)}</strong>
       </td>
     </tr>
   );

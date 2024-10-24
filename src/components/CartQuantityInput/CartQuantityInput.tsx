@@ -31,7 +31,7 @@ const CartQuantityInput = ({
   };
 
   const increment = () => {
-    updateQuantity(Math.min(5, quantity + 1));
+    updateQuantity(quantity + 1);
   };
 
   const decrement = () => {
@@ -47,9 +47,7 @@ const CartQuantityInput = ({
         {!checkout && <span>Quantity: </span>}
         <span>{quantity}</span>
       </div>
-      <button onClick={increment} disabled={quantity >= 5}>
-        +
-      </button>
+      <button onClick={increment}>+</button>
     </div>
   );
 };

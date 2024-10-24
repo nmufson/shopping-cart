@@ -6,7 +6,7 @@ import CartQuantityInput from '../../components/CartQuantityInput/CartQuantityIn
 import { useLayoutContext } from '../../hooks/useLayoutContext';
 import { Product } from '../../types';
 import { renderStars } from '../../utils/starRating';
-import AddToCartConfirmationModal from '../../components/Modals/AddedToCartModal/AddedToCartModal';
+import AddedToCartModal from '../../components/Modals/AddedToCartModal/AddedToCartModal';
 
 const Item = () => {
   // passed item state through our Link in ItemCard
@@ -23,11 +23,6 @@ const Item = () => {
   if (!item) {
     return <div>Product not found</div>;
   }
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    navigate('/shop');
-  };
 
   // have add to cart bring them back to home page and show a modal with what they added to cart
   // quantity, total price
@@ -57,6 +52,10 @@ const Item = () => {
   const handleBuyNow = () => {
     addItemToCart(item, addedQuantity);
     navigate('/checkout');
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -92,11 +91,11 @@ const Item = () => {
       </div>
 
       {isModalOpen && (
-        <AddToCartConfirmationModal
+        <AddedToCartModal
           item={item}
           addedQuantity={addedQuantity}
           cartItems={cartItems}
-          onClose={handleCloseModal}
+          onClose={closeModal}
         />
       )}
     </>

@@ -1,32 +1,50 @@
-.checkOutPageContainer {
+.checkoutPageContainer {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 40px;
+  margin: 50px 0 50px 0;
 }
 
 .shoppingCartContainer {
+  min-width: 1000px;
 }
 
 .shoppingCartContainer h1 {
+  color: var(--text-primary);
   font-size: 2.3rem;
   margin: 0 0 20px 0;
 }
 
-.checkOutTable {
+.tableWrapper {
+  border-radius: 10px;
+  border: 3px solid var(--bg-secondary);
+  overflow: hidden; /* contains the table */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.checkoutTable {
   width: 100%;
-  border-collapse: separate;
+  border-collapse: collapse;
 }
 
-.checkOutTable thead,
-.checkOutTable th {
-  background-color: aqua;
+.checkoutTable thead {
+  height: 50px;
+  background-color: var(--bg-secondary);
+  border-bottom: none;
 }
 
-.checkOutTable thead * {
+.checkoutTable thead * {
   font-size: 1.5rem;
 }
 
-.checkOutTable tbody * {
+.checkoutTable th:first-child {
+  width: 450px;
+}
+
+.checkoutTableBody p,
+.checkoutTableBody button,
+.checkoutTableBody span,
+.checkoutTableBody strong {
   font-size: 1.3rem;
 }
 
@@ -37,5 +55,5 @@
 }
 
 .orderSummary {
-  min-width: 350px;
+  min-width: 400px;
 }
