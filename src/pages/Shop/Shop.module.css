@@ -3,4 +3,5 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.8rem;
   width: 90%;
+  margin: 40px 0 40px 0;
 }

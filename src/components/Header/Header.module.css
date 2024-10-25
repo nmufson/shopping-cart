@@ -4,27 +4,63 @@
   align-items: center;
 }
 
-.myStoreP {
-  font-size: 2.8rem;
+.shopFastP {
+  font-size: 2rem;
   font-weight: 700;
   margin: 0 0 0 10px;
-}
-
-.navContainer {
+  text-wrap: wrap;
   display: flex;
+  flex-direction: column;
+  width: min-content;
+}
+/* 
+at certain width have navContainer appear with flex and hide hamburger  */
+.navContainer {
+  display: none;
+  gap: 30px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .navContainer > a {
-  font-size: 1.5rem;
+  font-size: 2.3rem;
   margin: 0 10px 0 10px;
   display: flex;
 }
 
 .cartIconContainer {
-  font-size: 2.4rem;
   display: flex;
-  margin: 0 10px 0 0;
+  align-items: center;
+  position: relative;
+  gap: 5px;
+}
+
+.cartMenuDiv {
+  display: flex;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+.cartQuantityWrapper {
+  height: 30px;
+  width: 30px;
+  background-color: var(--accent);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+}
+
+.cartQuantityWrapper p {
+  justify-self: center;
+  align-self: center;
+}
+
+.cartP {
+  display: none;
+  font-size: 3rem;
+}
+
+.cartIconContainer:hover {
+  text-decoration: underline;
 }

@@ -27,7 +27,7 @@ ItemCardProps) => {
         </div>
 
         <div className={styles.itemInfo}>
-          <p>{item.title}</p>
+          <p className={styles.itemTitle}>{item.title}</p>
           <p>${item.displayPrice}</p>
           {renderStars({
             rating: item.rating.rate,

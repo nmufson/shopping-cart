@@ -61,7 +61,10 @@ const Item = () => {
   return (
     <>
       <div className={styles.itemPageContainer}>
-        <img src={item.image} alt={item.title} className={styles.itemImage} />
+        <div className={styles.itemDiv}>
+          <img src={item.image} alt={item.title} className={styles.itemImage} />
+          <p>{item.description}</p>
+        </div>
 
         <div className={styles.rightContainer}>
           <div className={styles.itemInfoContainer}>
@@ -70,17 +73,20 @@ const Item = () => {
               rating: item.rating.rate,
               count: item.rating.count,
               className: styles.starRating,
+              itemPage: true,
             })}
-            <p>{item.description}</p>
-            <p>${item.displayPrice}</p>
+
+            <p className={styles.displayPriceP}>${item.displayPrice}</p>
           </div>
           <div className={styles.cartActionsContainer}>
             <div className={styles.cartQuantityDiv}>
-              {/* modal needs the added qty, the price, and the caritems after theyre set */}
-              <CartQuantityInput
-                quantity={addedQuantity}
-                setQuantity={setAddedQuantity}
-              />
+              <div className={styles.quantityDiv}>
+                <p>Quantity:</p>
+                <CartQuantityInput
+                  quantity={addedQuantity}
+                  setQuantity={setAddedQuantity}
+                />
+              </div>
             </div>
             <div className={styles.buttonDiv}>
               <button onClick={handleAddToCart}>Add to Cart</button>

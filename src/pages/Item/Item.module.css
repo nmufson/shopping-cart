@@ -6,23 +6,41 @@
   align-items: center;
 }
 
+.itemDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 3px solid var(--bg-secondary);
+  padding: 20px;
+}
+
 .itemImage {
-  max-height: 40vh;
-  width: auto;
+  width: 70%;
+  height: auto;
+  margin: 0 0 20px 0;
+}
+
+.itemDiv p {
+  font-size: 1.5rem;
 }
 
 .rightContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .itemInfoContainer {
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
+
+  align-items: flex-start;
 }
 
 .itemInfoContainer h3 {
@@ -35,20 +53,60 @@
   gap: 2px;
 }
 
-.starRating span {
-  font-size: 35px;
+.starRating {
+  --star-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.starRating span:not(:last-child) {
+  font-size: var(--star-size);
+}
+
+.starRating span:last-child {
+  font-size: calc(var(--star-size) * 0.7);
+  position: relative;
+  top: 4px;
 }
 
 .itemInfoContainer p,
 .itemInfoContainer input {
-  font-size: 1.5rem;
+  font-size: 2rem;
+}
+
+.cartActionsContainer {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cartActionsContainer * {
+  font-size: 2rem;
 }
 
 .cartQuantityDiv {
 }
 
+.quantityDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .buttonDiv {
-  align-self: center;
+  align-self: start;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttonDiv button {
+  width: 200px;
+}
+
+.displayPriceP {
+  align-self: start;
 }
 
 /* removes the auto generated spin button for incr/decrementing */

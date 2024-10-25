@@ -4,7 +4,6 @@ import { CartItem } from '../../types';
 interface CartQuantityInputProps {
   quantity: number;
   setQuantity: (value: number) => void;
-  checkout?: boolean; // Optional prop to indicate if we're on checkout page
   setCartItems?: React.Dispatch<React.SetStateAction<CartItem[]>>;
   item?: CartItem;
 }
@@ -12,7 +11,6 @@ interface CartQuantityInputProps {
 const CartQuantityInput = ({
   quantity,
   setQuantity,
-  checkout = false,
   setCartItems,
   item,
 }: CartQuantityInputProps) => {
@@ -44,7 +42,6 @@ const CartQuantityInput = ({
         -
       </button>
       <div className={styles.inputWrapper}>
-        {!checkout && <span>Quantity: </span>}
         <span>{quantity}</span>
       </div>
       <button onClick={increment}>+</button>

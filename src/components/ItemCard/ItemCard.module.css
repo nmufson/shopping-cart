@@ -1,13 +1,23 @@
 .itemContainer {
-  border: black 1px solid;
+  border: 3px solid var(--bg-secondary);
   margin: 10px;
-  padding: 10px 10px 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 450px;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-end;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.itemContainer * {
+  color: var(--text-primary);
+}
+
+.itemContainer:hover .itemTitle {
+  text-decoration: underline;
 }
 
 .imageDiv {
@@ -29,12 +39,14 @@
 }
 
 .itemInfo {
-  text-align: center;
-  align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 100%;
   margin: 10px 0 0 0;
+  min-height: 150px;
 }
 
 .itemContainer p {
@@ -46,4 +58,14 @@
   display: flex;
   align-items: center;
   gap: 2px;
+}
+
+.starRating span:not(:last-child) {
+  font-size: 35px;
+}
+
+.starRating span:last-child {
+  font-size: 20px;
+  top: 5px;
+  position: relative;
 }

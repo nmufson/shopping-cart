@@ -4,11 +4,11 @@
   --color-navy: #03346e; /* Rich navy - perfect for buttons, important elements */
   --color-blue: #6eacda; /* Light blue - great for accents, hover states */
   --color-cream: #e2e2b6; /* Light cream - nice for highlights, backgrounds */
-
+  --white-smoke: #f5f5f5;
   /* Semantic Variables */
   --text-primary: var(--color-dark-blue);
   --text-light: #ffffff;
-  --bg-primary: #ffffff;
+  --bg-primary: var(--white-smoke);
   --bg-secondary: var(--color-cream);
   --accent: var(--color-blue);
   --button-bg: var(--color-navy);

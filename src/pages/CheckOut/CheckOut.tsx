@@ -57,7 +57,7 @@ const CheckOut = () => {
   return (
     <>
       <div className={styles.checkoutPageContainer}>
-        <div className={styles.shoppingCartContainer}>
+        {/* <div className={styles.shoppingCartContainer}>
           <div>
             <h1>Your Shopping Cart ({totalCartQuantity} items)</h1>
           </div>
@@ -75,7 +75,7 @@ const CheckOut = () => {
                 {displayItems.map((item, index) => {
                   const isRemoved = removedItem?.item.id === item.id;
                   const isRemoving = removingItemId === item.id;
-                  console.log(isRemoving);
+
                   if (isRemoved) {
                     return (
                       <tr key={`removed-${item.id}`}>
@@ -91,17 +91,63 @@ const CheckOut = () => {
                       setCartItems={setCartItems}
                       item={item}
                       onRemove={() => handleRemoveItem(item, index)}
-                      className={isRemoving ? 'styles.removed' : ''}
+                      className={isRemoving ? 'removed' : ''}
                     />
                   );
                 })}
               </tbody>
             </table>
           </div>
+        </div> */}
+        <div className={styles.shoppingCartContainer}>
+          <div>
+            <h1>Your Shopping Cart ({totalCartQuantity} items)</h1>
+          </div>
+
+          <div className={styles.checkoutGrid}>
+            <div className={styles.gridHeaderRow}>
+              <div>
+                <h3 className={styles.itemsHeader}>Items</h3>
+              </div>
+              <div>
+                <h3 className={styles.quantityHeader}>Quantity</h3>
+              </div>
+              <div>
+                <h3 className={styles.priceHeader}>Item Price</h3>
+              </div>
+              <div>
+                <h3 className={styles.totalHeader}>Total</h3>
+              </div>
+            </div>
+            <div className={styles.checkoutGridBody}>
+              {displayItems.map((item, index) => {
+                const isRemoved = removedItem?.item.id === item.id;
+                const isRemoving = removingItemId === item.id;
+
+                if (isRemoved) {
+                  return (
+                    <div
+                      key={`removed-${item.id}`}
+                      className={styles.removedRow}
+                    >
+                      <RemovedCartItem item={item} onUndo={handleUndo} />
+                    </div>
+                  );
+                }
+                return (
+                  <CheckOutCartItem
+                    key={item.id}
+                    setCartItems={setCartItems}
+                    item={item}
+                    onRemove={() => handleRemoveItem(item, index)}
+                    className={isRemoving ? 'removed' : ''}
+                  />
+                );
+              })}
+            </div>
+          </div>
         </div>
-        <div>
-          <div className={styles.priceContainer}></div>
-        </div>
+
         <div className={styles.orderSummary}>
           <OrderSummary setIsModalOpen={setIsModalOpen}></OrderSummary>
         </div>
