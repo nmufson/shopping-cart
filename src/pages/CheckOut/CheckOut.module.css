@@ -2,20 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 40px;
   margin: 50px 0 50px 0;
   width: 90%;
 }
 
 .shoppingCartContainer {
-  width: 100%;
+  width: clamp(280px, 100%, 500px);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* 
-make larger at media query */
 .shoppingCartContainer h1 {
   color: var(--text-primary);
   text-align: center;
@@ -59,10 +58,14 @@ make larger at media query */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
+  .shoppingCartContainer {
+    width: clamp(500px, 100%, 900px);
+  }
   .checkoutGrid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr; /* Adjust as needed */
+    width: clamp(500px, 100%, 900px);
   }
   .gridHeaderRow {
     grid-column: 1 / -1;
@@ -70,5 +73,19 @@ make larger at media query */
   }
   .checkoutGridBody {
     display: contents; /* Keeps grid layout for all children */
+  }
+  .quantityHeader,
+  .priceHeader,
+  .totalHeader {
+    display: block;
+  }
+  .orderSummary {
+    width: clamp(350px, 100%, 425px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .checkoutPageContainer {
+    flex-direction: row;
   }
 }

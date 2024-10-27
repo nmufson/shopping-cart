@@ -1,7 +1,21 @@
 .shopContainer {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.8rem;
-  width: 90%;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 1rem;
+  width: 95%;
   margin: 40px 0 40px 0;
+  align-items: stretch;
+  justify-content: center;
+}
+
+@media (min-width: 500px) {
+  .shopContainer {
+    grid-template-columns: repeat(3, minmax(145px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .shopContainer {
+    grid-template-columns: repeat(3, minmax(200px, 350px));
+  }
 }

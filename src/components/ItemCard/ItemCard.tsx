@@ -26,8 +26,9 @@ ItemCardProps) => {
           <img src={item.image} alt={item.title} />
         </div>
 
-        <div className={styles.itemInfo}>
-          <p className={styles.itemTitle}>{item.title}</p>
+        <p className={styles.itemTitle}>{item.title}</p>
+
+        <div className={styles.priceRatingDiv}>
           <p>${item.displayPrice}</p>
           {renderStars({
             rating: item.rating.rate,

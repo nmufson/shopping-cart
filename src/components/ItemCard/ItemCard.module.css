@@ -1,19 +1,36 @@
 .itemContainer {
   border: 3px solid var(--bg-secondary);
-  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 450px;
+  min-height: 100%;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 .itemContainer * {
   color: var(--text-primary);
+}
+
+.itemContainer p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: 1.1rem;
+}
+
+.itemTitle {
+  min-height: 100px;
+  width: 90%;
+  margin: 10px 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .itemContainer:hover .itemTitle {
@@ -24,8 +41,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 250px;
-  width: 300px;
+  min-height: 200px;
+  width: 100%;
+  margin: 1rem 0 0 0;
 }
 
 .itemContainer img {
@@ -33,25 +51,22 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  object-fit: cover;
-  width: 150px;
-  height: auto;
+  object-fit: contain;
+  max-width: 60%;
+  max-height: 200px;
 }
 
-.itemInfo {
+.priceRatingDiv {
+  margin-top: auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  width: 100%;
-  margin: 10px 0 0 0;
-  min-height: 150px;
+  margin-bottom: 10px;
 }
 
-.itemContainer p {
-  font-size: 1.3rem;
-  margin: 0 20px 10px 20px;
+.priceRatingDiv p {
+  margin: 0 0px 10px 0px;
 }
 
 .starRating {
@@ -61,11 +76,17 @@
 }
 
 .starRating span:not(:last-child) {
-  font-size: 35px;
+  font-size: 1rem;
 }
 
 .starRating span:last-child {
-  font-size: 20px;
-  top: 5px;
+  font-size: 0.9rem;
+  top: 0.1rem;
   position: relative;
+}
+
+@media (min-width: 1024px) {
+  .shopContainer {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

@@ -120,8 +120,18 @@
   text-decoration: none;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .row {
     display: contents; /* Makes each row's children occupy the grid */
+  }
+  .productDiv {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .bottomDiv {
+    grid-column: 2 / span 3; /* This makes it span columns 2-4 */
+    grid-row: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Divide the bottomDiv into 3 equal columns */
   }
 }
