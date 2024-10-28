@@ -5,10 +5,10 @@
 .row {
   display: flex;
   flex-direction: column;
-  animation: fadeIn 0.3s ease-in-out;
-  transform-origin: center; /* Make sure the expansion starts from the top */
+  /* animation: fadeIn 1s ease-in-out; */
+  transform-origin: center;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
 }
 
 @keyframes fadeIn {
@@ -22,6 +22,12 @@
   }
 }
 
+.removed {
+  background-color: black;
+  animation: minimize 0.3s ease-in-out forwards;
+  pointer-events: none;
+}
+
 @keyframes minimize {
   from {
     transform: scaleY(1);
@@ -33,11 +39,6 @@
     opacity: 0;
     max-height: 0;
   }
-}
-
-.removed {
-  animation: minimize 0.3s ease-in-out forwards;
-  pointer-events: none;
 }
 
 .productDiv,
@@ -59,8 +60,13 @@
 }
 
 .productTitle {
+  color: var(--text-primary);
   text-align: left;
   margin: 0;
+}
+
+.productTitle:hover {
+  text-decoration: underline;
 }
 
 .productDiv {
@@ -103,7 +109,7 @@
   border: none;
   padding: 0;
   color: var(--color-blue);
-  text-decoration: underline;
+
   cursor: pointer;
   font: inherit;
   width: auto;
@@ -111,7 +117,7 @@
 }
 
 .removeButton:hover {
-  color: var(--text-primary); /* swap these for variables?*/
+  text-decoration: underline;
   background: none;
 }
 

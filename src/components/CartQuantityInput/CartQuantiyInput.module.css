@@ -18,12 +18,13 @@
   font-weight: bold;
 }
 
-button {
+.quantityInput button {
   padding: 0.3rem 0.5rem;
-  width: 25px;
+  width: 1.7rem;
+  height: 1.7rem;
 }
 
-button:disabled {
+.quantityInput button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }

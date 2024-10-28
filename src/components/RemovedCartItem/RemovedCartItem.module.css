@@ -1,7 +1,16 @@
-.removedItem {
-  padding: 12px;
-  background-color: #f8f8f8;
-  border-radius: 4px;
-  margin: 8px 0;
-  animation: fadeIn 0.3s ease-in-out;
+.removeCartItemA:hover {
+  text-decoration: underline;
+}
+
+.undo {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-blue);
+  font-size: 1.2rem;
+}
+
+.undo:hover {
+  background: none;
+  text-decoration: underline;
 }

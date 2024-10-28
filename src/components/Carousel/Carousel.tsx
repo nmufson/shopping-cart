@@ -7,7 +7,6 @@ interface CarouselImage {
 }
 
 const Carousel: React.FC = () => {
-  // make each an object with link and alt image text
   const images: CarouselImage[] = [
     {
       url: 'https://img.businessoffashion.com/resizer/v2/VFIGZIPEVZFF3NIXMJQUZH5YU4.jpg?auth=9a95529ed812f398a7aaaa9618d0561aa34777a6ce6c43ac29e65b9c2467b7b4&width=1440',

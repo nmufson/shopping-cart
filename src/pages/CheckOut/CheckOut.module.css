@@ -58,6 +58,31 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
 }
 
+.removedItem {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.emptyCartMessage {
+  align-self: center;
+  font-size: 1.5rem;
+}
+
+.emptyCartMessage a:hover {
+  text-decoration: underline;
+}
+
 @media (min-width: 1024px) {
   .shoppingCartContainer {
     width: clamp(500px, 100%, 900px);

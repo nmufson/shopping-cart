@@ -6,6 +6,9 @@ const Home = () => {
   return (
     <div className={styles.homeContainer}>
       <Carousel></Carousel>
+      <div className={styles.welcomeDiv}>
+        <h1>Welcome to Shop Fast</h1>
+      </div>
       <Link to="../shop/" className={styles.shopLink}>
         <div className={styles.introDiv}>
           <p>

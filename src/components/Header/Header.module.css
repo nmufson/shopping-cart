@@ -9,7 +9,7 @@
 }
 
 .shopFastP {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   text-wrap: wrap;
   display: flex;
@@ -27,7 +27,7 @@ at certain width have navContainer appear with flex and hide hamburger  */
 }
 
 .navContainer > a {
-  font-size: 2.3rem;
+  font-size: 2rem;
   display: flex;
   padding: 0.5rem;
 }
@@ -37,17 +37,23 @@ at certain width have navContainer appear with flex and hide hamburger  */
   border-radius: 0.4rem;
 }
 
+.cartMenuDiv {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  padding: 0.5rem;
+  border: 3px solid transparent;
+}
+
+.cartMenuDiv:hover {
+  border-color: var(--color-blue);
+}
+
 .cartIconContainer {
   display: flex;
   align-items: center;
   position: relative;
   gap: 0.4rem;
-}
-
-.cartMenuDiv {
-  display: flex;
-  gap: 1rem;
-  position: relative;
 }
 
 .dropdownMenu {

@@ -1,15 +1,23 @@
 import styles from './RemovedCartItem.module.css';
+import { CartItem } from '../../types';
 
-const RemovedCartItem = ({ item, onUndo }) => {
+interface RemovedCartItemProps {
+  item: CartItem;
+  onUndo: () => void;
+}
+
+const RemovedCartItem: React.FC<RemovedCartItemProps> = ({ item, onUndo }) => {
   return (
-    <div className={styles.removedItem}>
-      <p>
-        <a href={`/${item.slug}`}>{item.title}</a> was removed from your cart.{' '}
-        <button onClick={onUndo} className={styles.undoButton}>
-          Undo?
-        </button>
-      </p>
-    </div>
+    // make this link
+    <p>
+      <a href={`/${item.slug}`} className={styles.removeCartItemA}>
+        {item.title}
+      </a>{' '}
+      was removed from your cart.{' '}
+      <button onClick={onUndo} className={styles.undo}>
+        Undo?
+      </button>
+    </p>
   );
 };
 

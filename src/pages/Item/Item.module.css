@@ -114,6 +114,11 @@
   gap: 5px;
 }
 
+.itemInfoDiv .quantityDiv button {
+  height: 2rem;
+  width: 2rem;
+}
+
 .buttonDiv {
   align-self: start;
   display: flex;

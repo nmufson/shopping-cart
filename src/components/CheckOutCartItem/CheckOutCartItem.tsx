@@ -2,36 +2,36 @@ import styles from './CheckOutCartItem.module.css';
 import { useState } from 'react';
 import CartQuantityInput from '../CartQuantityInput/CartQuantityInput';
 import { CartItem } from '../../types';
+import { Link } from 'react-router-dom';
 
 interface CheckOutCartItemProps {
   setCartItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
   item: CartItem;
   onRemove: () => void;
-  className?: string;
 }
 
 const CheckOutCartItem = ({
   setCartItems,
   item,
   onRemove,
-  className = '',
 }: CheckOutCartItemProps) => {
   const [quantity, setQuantity] = useState<number>(item.quantity);
 
-  const rowClassName = `${styles.row} ${
-    className.includes('removed') ? styles.removed : ''
-  }`;
-
   return (
-    <div className={rowClassName}>
+    <div className={styles.row}>
       <div className={styles.productDiv}>
-        <img
-          src={item.image}
-          alt={item.title}
-          className={styles.productImage}
-        />
+        <Link to={`/${item.slug}`}>
+          <img
+            src={item.image}
+            alt={item.title}
+            className={styles.productImage}
+          />
+        </Link>
         <div className={styles.productNameRemoveDiv}>
-          <p className={styles.productTitle}>{item.title}</p>
+          <Link to={`/${item.slug}`}>
+            {' '}
+            <p className={styles.productTitle}>{item.title}</p>
+          </Link>
           <button onClick={onRemove} className={styles.removeButton}>
             Remove
           </button>

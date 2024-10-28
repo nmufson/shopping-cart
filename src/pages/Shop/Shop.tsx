@@ -1,13 +1,10 @@
 import styles from './Shop.module.css';
 import ItemCard from '../../components/ItemCard/ItemCard';
 import { useLayoutContext } from '../../hooks/useLayoutContext';
+import { Product } from '../../types';
 
 const Shop = () => {
-  const { data, loading, error } = useLayoutContext();
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const { data, error } = useLayoutContext();
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -16,7 +13,7 @@ const Shop = () => {
   return (
     <>
       <div className={styles.shopContainer}>
-        {data.map((item) => (
+        {data.map((item: Product) => (
           <ItemCard key={item.slug} item={item} />
         ))}
       </div>

@@ -175,16 +175,51 @@ dark mode?? */
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 101;
-  min-width: 300px;
+  max-width: 310px;
+}
+
+.modal h2 {
+  font-size: 2.1rem;
+  margin-bottom: 1rem;
+}
+
+.modal p {
+  margin-bottom: 1rem;
+}
+
+.modal p,
+.modal button {
+  font-size: 1.3rem;
+}
+
+.modal button {
+  height: 4rem;
+  width: 12rem;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-blue);
+}
+
+.loadingDiv {
+  justify-self: center;
+  top: 50%;
+  position: absolute;
 }
 
 @media (min-width: 768px) {
   html {
     font-size: 16px; /* 1rem = 16px */
+  }
+  .modal {
+    max-width: none;
   }
 }
 

@@ -45,7 +45,7 @@ const Layout: React.FC = () => {
   }, [location]);
 
   if (loading) {
-    return <div>Loading...</div>; // Or a more sophisticated loading component
+    return <div className="loadingDiv">Loading...</div>; // Or a more sophisticated loading component
   }
 
   return (

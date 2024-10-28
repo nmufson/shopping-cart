@@ -1,11 +1,3 @@
-.modal h2 {
-  margin-bottom: 1rem;
-}
-
-.modal p {
-  margin-bottom: 1rem;
-}
-
 .buttonGroup {
   display: flex;
   gap: 1rem;
