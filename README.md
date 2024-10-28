@@ -4,13 +4,17 @@ A front-end e-commerce platform built as a portfolio project to demonstrate Reac
 
 ## Live Demo
 
+https://shopping-cart-9tj7dr1v5-nmufsons-projects.vercel.app/
+
 ## Features
 
 ### 🏠 Home Page
+
 - Landing page with navigation to shop and other sections
 - Responsive design for all devices
 
 ### 🛍️ Shop Page
+
 - Browse through product catalog
 - Product cards displaying:
   - product images
@@ -21,6 +25,7 @@ A front-end e-commerce platform built as a portfolio project to demonstrate Reac
 - Responsive grid layout
 
 ### 📦 Product Details
+
 - Detailed product view featuring:
   - Enlarged product images
   - Product description
@@ -32,6 +37,7 @@ A front-end e-commerce platform built as a portfolio project to demonstrate Reac
 - Continue Shopping option
 
 ### 🛒 Checkout Experience
+
 - Detailed cart review
 - Item management:
   - Quantity adjustments
