@@ -2,12 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 2rem 0 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .shopFastP {
   font-size: 2rem;
   font-weight: 700;
-  margin: 0 0 0 10px;
   text-wrap: wrap;
   display: flex;
   flex-direction: column;
@@ -17,7 +20,7 @@
 at certain width have navContainer appear with flex and hide hamburger  */
 .navContainer {
   display: none;
-  gap: 30px;
+  gap: 1.2rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -25,26 +28,76 @@ at certain width have navContainer appear with flex and hide hamburger  */
 
 .navContainer > a {
   font-size: 2.3rem;
-  margin: 0 10px 0 10px;
   display: flex;
+  padding: 0.5rem;
+}
+
+.navContainer > a:hover {
+  background-color: var(--hover-overlay);
+  border-radius: 0.4rem;
 }
 
 .cartIconContainer {
   display: flex;
   align-items: center;
   position: relative;
-  gap: 5px;
+  gap: 0.4rem;
 }
 
 .cartMenuDiv {
   display: flex;
-  gap: 10px;
-  margin-right: 10px;
+  gap: 1rem;
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 1%;
+  background-color: white;
+  border: 3px solid var(--bg-secondary); /* Optional: adds border */
+  border-radius: 0 0 10px 10px; /* Optional: rounds bottom corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow */
+  min-width: 200px;
+  z-index: 1000; /* Ensure it appears above other content */
+  animation: slideDown 0.2s ease-out;
+  max-width: calc(100vw - 2rem);
+}
+
+.dropdownMenu a {
+  display: block;
+  padding: 0.8rem;
+  text-decoration: none;
+  color: var(--color-dark-blue);
+  font-size: 1.5rem;
+}
+
+.dropdownMenu a:not(:last-child) {
+  border-bottom: 1px solid var(--color-dark-blue);
+}
+
+.dropdownMenu a:hover {
+  background-color: var(--bg-secondary);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cartMenuDiv button {
+  width: 2.3rem;
 }
 
 .cartQuantityWrapper {
-  height: 30px;
-  width: 30px;
+  height: 2rem;
+  width: 2rem;
   background-color: var(--accent);
   color: var(--text-primary);
   display: flex;
@@ -63,4 +116,16 @@ at certain width have navContainer appear with flex and hide hamburger  */
 
 .cartIconContainer:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .shopFastP {
+    width: 100%;
+  }
+  .navContainer {
+    display: flex;
+  }
+  .hamburgerIcon {
+    display: none;
+  }
 }

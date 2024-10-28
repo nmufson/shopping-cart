@@ -14,6 +14,6 @@
   --button-bg: var(--color-navy);
 
   /* States */
-  --hover-overlay: rgba(2, 21, 38, 0.1);
+  --hover-overlay: rgba(30, 83, 130, 0.5);
   --active-overlay: rgba(2, 21, 38, 0.2);
 }

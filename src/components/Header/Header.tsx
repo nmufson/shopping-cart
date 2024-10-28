@@ -26,37 +26,6 @@ const Header: React.FC<HeaderProps> = ({ cartItems }) => {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    // <header className={styles.header}>
-    //   <Link to="shop/">
-    //     <p className={styles.shopFastP}>Shop Fast</p>
-    //   </Link>
-    //   <div className={styles.navContainer}>
-    //     <Link to="home/">
-    //       <p>Home</p>
-    //     </Link>
-    //     <Link to="shop/">
-    //       <p>Shop</p>
-    //     </Link>
-    //     <Link to="about/">
-    //       <p>About</p>
-    //     </Link>
-    //   </div>
-
-    //   <Link to="checkout/">
-    //     <div className={styles.cartIconContainer}>
-    //       <div className={styles.cartQuantityWrapper}>
-    //         <p>{totalCartQuantity}</p>
-    //       </div>
-    //       <CartIcon
-    //         size={50}
-    //         color="currentColor"
-    //         className={styles.cartIcon}
-    //         aria-label="Shopping Cart"
-    //       />
-    //       <p className={styles.cartP}>Cart</p>
-    //     </div>
-    //   </Link>
-    // </header>
     <header className={styles.header}>
       <Link to="shop/">
         <p className={styles.shopFastP}>Shop Fast</p>

@@ -21,7 +21,7 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .itemTitle {
@@ -76,12 +76,12 @@
 }
 
 .starRating span:not(:last-child) {
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 .starRating span:last-child {
-  font-size: 0.9rem;
-  top: 0.1rem;
+  font-size: 1rem;
+  top: 0.15rem;
   position: relative;
 }
 

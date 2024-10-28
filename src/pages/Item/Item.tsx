@@ -61,13 +61,12 @@ const Item = () => {
   return (
     <>
       <div className={styles.itemPageContainer}>
-        <div className={styles.itemDiv}>
+        <div className={styles.imageDiv}>
           <img src={item.image} alt={item.title} className={styles.itemImage} />
-          <p>{item.description}</p>
         </div>
 
-        <div className={styles.rightContainer}>
-          <div className={styles.itemInfoContainer}>
+        <div className={styles.itemInfoDiv}>
+          <div className={styles.titlePriceRatingDiv}>
             <h3>{item.title}</h3>
             {renderStars({
               rating: item.rating.rate,
@@ -92,6 +91,10 @@ const Item = () => {
               <button onClick={handleAddToCart}>Add to Cart</button>
               <button onClick={handleBuyNow}>Buy Now</button>
             </div>
+          </div>
+          <div className={styles.descriptionDiv}>
+            <strong>Description:</strong>
+            <p>{item.description}</p>
           </div>
         </div>
       </div>

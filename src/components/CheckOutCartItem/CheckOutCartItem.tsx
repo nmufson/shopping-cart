@@ -44,6 +44,7 @@ const CheckOutCartItem = ({
             setQuantity={setQuantity}
             setCartItems={setCartItems}
             item={item}
+            checkout={true}
           />
         </div>
         <div className={styles.priceDiv}>

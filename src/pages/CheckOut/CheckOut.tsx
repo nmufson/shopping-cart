@@ -147,7 +147,6 @@ const CheckOut = () => {
             </div>
           </div>
         </div>
-
         <div className={styles.orderSummary}>
           <OrderSummary setIsModalOpen={setIsModalOpen}></OrderSummary>
         </div>

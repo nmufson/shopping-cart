@@ -6,6 +6,7 @@ interface CartQuantityInputProps {
   setQuantity: (value: number) => void;
   setCartItems?: React.Dispatch<React.SetStateAction<CartItem[]>>;
   item?: CartItem;
+  checkout?: boolean;
 }
 
 const CartQuantityInput = ({
@@ -13,6 +14,7 @@ const CartQuantityInput = ({
   setQuantity,
   setCartItems,
   item,
+  checkout = false,
 }: CartQuantityInputProps) => {
   const updateQuantity = (newQuantity: number) => {
     setQuantity(newQuantity);
@@ -22,7 +24,8 @@ const CartQuantityInput = ({
         const existingItem = prevItems.find(
           (cartItem) => cartItem.id === item.id
         );
-        existingItem.quantity = newQuantity;
+        if (existingItem) existingItem.quantity = newQuantity;
+
         return [...prevItems];
       });
     }

@@ -1,41 +1,55 @@
 .itemPageContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  width: 100%;
-  gap: 100px;
-  align-items: center;
+  width: 95%;
+  gap: 3rem;
+  align-items: flex-start;
+  margin: 2rem 0 2rem 0;
 }
 
-.itemDiv {
+.imageDiv {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 450px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: 3px solid var(--bg-secondary);
   padding: 20px;
+  width: clamp(280px, 100%, 470px);
+  height: clamp(350px, 70%, 600px);
 }
 
 .itemImage {
-  width: 70%;
-  height: auto;
+  max-width: 80%;
+  max-height: 80%;
   margin: 0 0 20px 0;
 }
 
-.itemDiv p {
+.descriptionDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
 }
 
-.rightContainer {
+.descriptionDiv strong {
+  align-self: start;
+  margin: 0 0 0.5rem 0;
+}
+
+.itemInfoDiv {
+  width: clamp(280px, 100%, 430px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
 }
 
-.itemInfoContainer {
+.titlePriceRatingDiv {
   max-width: 400px;
   display: flex;
   flex-direction: column;
@@ -43,8 +57,8 @@
   align-items: flex-start;
 }
 
-.itemInfoContainer h3 {
-  font-size: 2.3rem;
+.titlePriceRatingDiv h3 {
+  font-size: 2rem;
 }
 
 .starRating {
@@ -68,8 +82,8 @@
   top: 4px;
 }
 
-.itemInfoContainer p,
-.itemInfoContainer input {
+.titlePriceRatingDiv p,
+.titlePriceRatingDiv input {
   font-size: 2rem;
 }
 
@@ -81,11 +95,17 @@
   gap: 20px;
 }
 
-.cartActionsContainer * {
-  font-size: 2rem;
+.cartActionsContainer button {
+  width: 3rem;
+  height: 2.5rem;
+}
+
+.cartActionsContainer input {
+  width: 5rem;
 }
 
 .cartQuantityDiv {
+  font-size: 2rem;
 }
 
 .quantityDiv {
@@ -102,7 +122,8 @@
 }
 
 .buttonDiv button {
-  width: 200px;
+  width: 10rem;
+  font-size: 1.3rem;
 }
 
 .displayPriceP {
@@ -114,4 +135,13 @@
 .input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+@media (min-width: 768px) {
+  .itemPageContainer {
+    flex-direction: row;
+  }
+  .imageDiv {
+    width: clamp(450px, 70%, 700px);
+  }
 }
