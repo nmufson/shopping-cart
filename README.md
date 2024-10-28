@@ -4,7 +4,7 @@ A front-end e-commerce platform built as a portfolio project to demonstrate Reac
 
 ## Live Demo
 
-https://shopping-cart-9tj7dr1v5-nmufsons-projects.vercel.app/
+https://shopping-cart-umber-three.vercel.app/
 
 ## Features
 
