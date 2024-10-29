@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <p>
-        &copy; 2024 Blog API {'| '}
+        Nick Mufson {'| '}
         <a href="mailto:nickmufson1@gmail.com" rel="noopener noreferrer">
           Email
         </a>

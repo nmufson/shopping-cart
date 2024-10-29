@@ -39,6 +39,7 @@
 
 .introDiv button {
   width: 8rem;
+  padding: 0.5rem;
 }
 
 @media (min-width: 500px) {
