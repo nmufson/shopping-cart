@@ -54,3 +54,18 @@ https://shopping-cart-umber-three.vercel.app/
 - **React Router v6** - For seamless navigation
 - **CSS Modules** - For scoped styling
 - **Local Storage** - For cart persistence
+
+## Testing
+🧪 **Comprehensive Test Suite**
+* **Vitest**
+* **React Testing Library** - For testing React components
+* Test coverage includes:
+   * Component rendering
+   * User interactions
+   * Cart functionality
+   * Navigation flows
+   * State management
+ 
+## Contact Information
+
+For questions, suggestions, or feedback, please contact me at nickmufson1@gmail.com.
