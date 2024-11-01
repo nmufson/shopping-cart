@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ cartItems }) => {
       </div>
 
       <div className={styles.cartMenuDiv}>
-        <Link to="checkout/">
+        <Link to="checkout/" className={styles.checkOutLink}>
           <div className={styles.cartIconContainer}>
             <div className={styles.cartQuantityWrapper}>
               <p>{totalCartQuantity}</p>
@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ cartItems }) => {
       </div>
 
       {isMenuOpen && (
-        <div className={styles.dropdownMenu}>
+        <div className={styles.dropdownMenu} data-testid="dropdown-menu">
           <Link to="home/" onClick={() => setIsMenuOpen(false)}>
             <p>Home</p>
           </Link>

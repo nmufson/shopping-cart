@@ -9,7 +9,7 @@ const Home = () => {
       <div className={styles.welcomeDiv}>
         <h1>Welcome to Shop Fast</h1>
       </div>
-      <Link to="../shop/" className={styles.shopLink}>
+      <Link to="shop/" className={styles.shopLink}>
         <div className={styles.introDiv}>
           <p>
             Handpicked collections for every style and occasion. Find your look

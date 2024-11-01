@@ -12,7 +12,7 @@ type LayoutContext = [
 ];
 
 // useLayoutContext basically calls useOutletContext with our defined types
-
+// had it return object so we could pull specific properties
 export const useLayoutContext = () => {
   const context = useOutletContext<LayoutContext>();
 

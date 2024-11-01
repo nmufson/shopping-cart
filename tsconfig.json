@@ -15,12 +15,14 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "typeRoots": ["node_modules/@types", "src/types"]
   },
   "include": [
     "src",
     "src/**/*.ts",
     "src/**/*.tsx",
+    "src/**/*.d.ts",
     "src/**/*.css",
     "src/**/*.svg"
   ],

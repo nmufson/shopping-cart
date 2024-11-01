@@ -1,7 +1,11 @@
 import { useLayoutContext } from '../../hooks/useLayoutContext';
 import styles from './OrderSummary.module.css';
 
-const OrderSummary: FC = ({ setIsModalOpen }) => {
+interface OrderSummaryProps {
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const OrderSummary: React.FC<OrderSummaryProps> = ({ setIsModalOpen }) => {
   const { cartItems } = useLayoutContext();
 
   const subtotal = cartItems.reduce(
@@ -14,7 +18,7 @@ const OrderSummary: FC = ({ setIsModalOpen }) => {
 
   return (
     <>
-      <div className={styles.titleDiv}>
+      <div className={styles.titleDiv} onClick={() => console.log(cartItems)}>
         <h2 className={styles.title}>Order Summary</h2>
       </div>
       <div className={styles.infoDiv}>
@@ -38,6 +42,7 @@ const OrderSummary: FC = ({ setIsModalOpen }) => {
       <button
         onClick={() => setIsModalOpen(true)}
         className={styles.checkoutButton}
+        disabled={cartItems.length === 0}
       >
         Proceed to Checkout
       </button>

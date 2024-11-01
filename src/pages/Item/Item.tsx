@@ -5,11 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import CartQuantityInput from '../../components/CartQuantityInput/CartQuantityInput';
 import { useLayoutContext } from '../../hooks/useLayoutContext';
 import { Product } from '../../types';
-import { renderStars } from '../../utils/starRating';
+import renderStars from '../../utils/renderStars';
 import AddedToCartModal from '../../components/Modals/AddedToCartModal/AddedToCartModal';
 
 const Item = () => {
-  // passed item state through our Link in ItemCard
   const location = useLocation();
   const navigate = useNavigate();
   const { slug } = useParams();
@@ -23,10 +22,6 @@ const Item = () => {
   if (!item) {
     return <div>Product not found</div>;
   }
-
-  // have add to cart bring them back to home page and show a modal with what they added to cart
-  // quantity, total price
-  // give them option to proceed to checkout or close modal
 
   const addItemToCart = (item: Product, addedQuantity: number) => {
     setCartItems((prevItems) => {

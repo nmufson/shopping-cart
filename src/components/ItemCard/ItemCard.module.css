@@ -19,7 +19,6 @@
 .itemContainer p {
   word-wrap: break-word;
   overflow-wrap: break-word;
-  word-wrap: break-word;
   word-break: break-word;
   font-size: 1.3rem;
 }

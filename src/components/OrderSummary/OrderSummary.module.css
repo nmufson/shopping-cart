@@ -38,3 +38,8 @@
   min-width: 90%;
   align-self: center;
 }
+
+.checkoutButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -16,8 +16,7 @@
   flex-direction: column;
   width: min-content;
 }
-/* 
-at certain width have navContainer appear with flex and hide hamburger  */
+
 .navContainer {
   display: none;
   gap: 1.2rem;
@@ -42,10 +41,14 @@ at certain width have navContainer appear with flex and hide hamburger  */
   gap: 1rem;
   position: relative;
   padding: 0.5rem;
+}
+
+.checkOutLink {
+  padding: 0.3rem;
   border: 3px solid transparent;
 }
 
-.cartMenuDiv:hover {
+.checkOutLink:hover {
   border-color: var(--color-blue);
 }
 

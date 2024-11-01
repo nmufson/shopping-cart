@@ -1,24 +1,13 @@
 import styles from './ItemCard.module.css';
 import { Link } from 'react-router-dom';
 import { Product } from '../../types';
-import { renderStars } from '../../utils/starRating';
+import renderStars from '../../utils/renderStars';
 
 interface ItemCardProps {
   item: Product;
-  // data: Product[];
-  // currentItem: Product | null;
-  // cartItems: CartItem[];
-
-  // setCartItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
 }
 
-const ItemCard = ({
-  item,
-}: // data,
-// currentItem,
-// cartItems,
-// setCartItems,
-ItemCardProps) => {
+const ItemCard = ({ item }: ItemCardProps) => {
   return (
     <Link to={`/${item.slug}`} state={{ item }}>
       <div className={styles.itemContainer}>

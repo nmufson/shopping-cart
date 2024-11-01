@@ -14,7 +14,7 @@ const Carousel: React.FC = () => {
     },
     {
       url: 'https://techwearstorm.com/cdn/shop/files/style-streetwear-06.webp',
-      altText: 'Man walking while wearing jean jacket and sunglasses ',
+      altText: 'Man walking while wearing jean jacket and sunglasses',
     },
     {
       url: 'https://www.boardsportsource.com/wp-content/uploads/2022/03/x-tra-MONSTER-Cord-Cloudworker-Twill-Daniel-Ledermann-by-Hannes-Mautner-28-1920x1080.jpg',
