@@ -1,22 +1,17 @@
 import React from 'react';
 
 interface IconProps extends React.SVGAttributes<SVGElement> {
-  size?: number;
   color?: string;
 }
 
 export const CartIcon: React.FC<IconProps> = ({
-  size = 24,
   color = 'currentColor',
-  width = size,
-  height = size,
+
   ...props
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    width={width}
-    height={height}
     fill={color}
     aria-hidden="true"
     role="img"

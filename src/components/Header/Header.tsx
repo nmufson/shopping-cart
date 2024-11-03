@@ -50,7 +50,6 @@ const Header: React.FC<HeaderProps> = ({ cartItems }) => {
               <p>{totalCartQuantity}</p>
             </div>
             <CartIcon
-              size={50}
               color="currentColor"
               className={styles.cartIcon}
               aria-label="Shopping Cart"

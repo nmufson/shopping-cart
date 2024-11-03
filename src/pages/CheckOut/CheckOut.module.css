@@ -18,7 +18,7 @@
 .shoppingCartContainer h1 {
   color: var(--text-primary);
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0 0 20px 0;
 }
 
@@ -34,7 +34,7 @@
   border: 3px solid var(--bg-secondary);
   border-radius: 10px; /* Rounded corners for a modern look */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .gridHeaderRow div {
@@ -45,7 +45,7 @@
   text-align: center;
   font-weight: bold;
   padding: 10px;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 .orderSummary {

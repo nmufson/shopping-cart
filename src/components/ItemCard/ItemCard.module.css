@@ -20,11 +20,11 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   word-break: break-word;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .itemTitle {
-  min-height: 100px;
+  min-height: 80px;
   width: 90%;
   margin: 10px 0 10px 0;
   display: flex;
@@ -40,7 +40,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 200px;
+  min-height: 150px;
   width: 100%;
   margin: 1rem 0 0 0;
 }
@@ -52,7 +52,7 @@
   background-position: center center;
   object-fit: contain;
   max-width: 60%;
-  max-height: 200px;
+  max-height: 150px;
 }
 
 .priceRatingDiv {

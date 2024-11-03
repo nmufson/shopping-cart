@@ -8,8 +8,6 @@
   justify-content: center;
 }
 
-/* check this */
-
 @media (min-width: 500px) {
   .shopContainer {
     grid-template-columns: repeat(3, minmax(145px, 1fr));
