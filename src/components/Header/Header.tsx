@@ -38,9 +38,6 @@ const Header: React.FC<HeaderProps> = ({ cartItems }) => {
         <Link to="shop/">
           <p>Shop</p>
         </Link>
-        <Link to="about/">
-          <p>About</p>
-        </Link>
       </div>
 
       <div className={styles.cartMenuDiv}>
@@ -74,9 +71,6 @@ const Header: React.FC<HeaderProps> = ({ cartItems }) => {
           </Link>
           <Link to="shop/" onClick={() => setIsMenuOpen(false)}>
             <p>Shop</p>
-          </Link>
-          <Link to="about/" onClick={() => setIsMenuOpen(false)}>
-            <p>About</p>
           </Link>
         </div>
       )}
