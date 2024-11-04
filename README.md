@@ -13,6 +13,10 @@ https://shopping-cart-umber-three.vercel.app/
 - Landing page with navigation to shop and other sections
 - Responsive design for all devices
 
+![Home Page with link to shop](./assets/home-page.png)
+
+*Home Page with link to shop*
+
 ### 🛍️ Shop Page
 
 - Browse through product catalog
@@ -23,6 +27,10 @@ https://shopping-cart-umber-three.vercel.app/
   - Average customer rating
 - Click-through to detailed product pages
 - Responsive grid layout
+
+![Shop Page with item previews](./assets/shop-page.png)
+
+*Shop Page with item previews*
 
 ### 📦 Product Details
 
@@ -36,6 +44,10 @@ https://shopping-cart-umber-three.vercel.app/
 - "Buy Now" option for direct checkout
 - Continue Shopping option
 
+![Item Page with detailed product info and purchase options](./assets/item-page.png)
+
+*Item Page with detailed product info and purchase options*
+
 ### 🛒 Checkout Experience
 
 - Detailed cart review
@@ -46,6 +58,10 @@ https://shopping-cart-umber-three.vercel.app/
   - Subtotal calculation
   - Estimated taxes and shipping
   - Final order total
+
+![Checkout Page with cart summary](./assets/checkout-page.png)
+
+*Checkout Page with cart summary*
 
 ## Technologies
 
