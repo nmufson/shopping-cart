@@ -56,7 +56,6 @@ https://shopping-cart-umber-three.vercel.app/
 - **Local Storage** - For cart persistence
 
 ## Testing
-🧪 **Comprehensive Test Suite**
 * **Vitest**
 * **React Testing Library** - For testing React components
 * Test coverage includes:
