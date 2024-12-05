@@ -65,6 +65,7 @@ body {
 header,
 footer {
   background-color: var(--color-dark-blue);
+  min-height: 4rem;
 }
 
 h1 {
@@ -107,7 +108,7 @@ p {
 
 header {
   position: sticky;
-  min-height: 4rem;
+
   width: 100%;
   top: 0;
   z-index: 1000;
@@ -120,7 +121,6 @@ main {
 }
 
 footer {
-  min-height: 4rem;
   width: 100%;
 }
 
@@ -200,7 +200,7 @@ footer {
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px; /* 1rem = 16px */
+    font-size: 16px;
   }
   .modal {
     width: clamp(300px, 50%, 500px);
@@ -209,6 +209,6 @@ footer {
 
 @media (min-width: 1024px) {
   html {
-    font-size: 18px; /* 1rem = 18px */
+    font-size: 18px;
   }
 }
