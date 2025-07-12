@@ -2,10 +2,6 @@
 
 A front-end e-commerce platform built as a portfolio project to demonstrate React development skills and front-end best practices.
 
-## Live Demo
-
-https://shopping-cart-umber-three.vercel.app/
-
 ## Features
 
 ### 🏠 Home Page
